@@ -210,17 +210,28 @@ section.icons {
     background-color: @background;
 
     .container {
+        .flex-display();
         .align-items(center);
         .justify-content(center);
     }
 
     .content {
+        .flex-display();
+        .align-items(center);
+        .justify-content(center);
         width: auto;
 
         a {
             margin-left: 6px;
             margin-right: 6px;
             opacity: 0.6;
+
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            font-size: 20px;
+            color: #333333;
+
             .transition(~'opacity @{transition-speed-1} @{in-sine}');
 
             &:first-child {
@@ -236,9 +247,10 @@ section.icons {
             }
 
             .icon {
-                width: 16px;
-                height: 16px;
+                width: 100%;
+                height: 100%;
             }
+
             .flag {
                 border-radius: 50%;
             }
