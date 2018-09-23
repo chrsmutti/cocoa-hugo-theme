@@ -31,6 +31,27 @@
                   </div>
                   <br />
                 {{end}}
+
+                <div class="navigation">
+                    <div>
+                        {{ if .PrevInSection }}
+                        <a href="{{ .PrevInSection.Permalink }}" title="{{ .PrevInSection.Title }}">
+                            <i class="material-icons">arrow_back</i>
+                            <p>{{ .PrevInSection.Title }}</p>
+                        </a>
+                        {{ end }}
+                    </div>
+
+                    <div>
+                        {{ if .NextInSection }}
+                        <a href="{{ .NextInSection.Permalink }}" title="{{ .NextInSection.Title }}">
+                            <p>{{ .NextInSection.Title }}</p>
+                            <i class="material-icons">arrow_forward</i>
+                        </a>
+                        {{ end }}
+                    </div>
+                </div>
+
                 <p class="back-to-posts"><a {{ printf "href=%q" ("/blog" | relLangURL) | safeHTMLAttr }}>{{ i18n "backToPosts" }}</a></p>
             </div>
             <br>

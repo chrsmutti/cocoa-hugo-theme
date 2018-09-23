@@ -1,0 +1,36 @@
+div.navigation {
+  display: flex;
+  flex-direction: column;
+
+    div {
+        width: 50%;
+    }
+
+    div:last-child {
+        text-align: right;
+    }
+
+  a {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+
+    p {
+      width: 80%;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+  }
+}
+
+@media (min-width: @wide-1-breakpoint) {
+  div.navigation {
+    display: flex;
+    flex-direction: row;
+  }
+}
+
+.back-to-posts {
+    text-align: center;
+}
