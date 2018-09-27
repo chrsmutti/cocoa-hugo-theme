@@ -636,6 +636,14 @@ section.main .content .markdown pre {
   font-size: 0.9rem;
   word-spacing: 0rem;
 }
+section.main .content .markdown code a,
+section.main .content .markdown pre a {
+  color: #7cb342;
+}
+section.main .content .markdown code a:hover,
+section.main .content .markdown pre a:hover {
+  color: #4b830d;
+}
 section.main .content .markdown code:not(.hljs) {
   /* enclosed by single backtick (`) */
   padding: 0.15em 0.5em;
