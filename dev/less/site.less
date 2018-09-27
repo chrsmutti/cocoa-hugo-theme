@@ -25,7 +25,9 @@ body {
     font-weight: 400;
     font-family: @body-font-stack;
     color: @black-content;
-    line-height: 1.6;
+    line-height: 1.5;
+    word-spacing: 0.1rem;
+    background-color: @background;
     text-rendering: optimizeLegibility !important;
 }
 
@@ -135,7 +137,7 @@ section.header {
     }
 
     nav {
-        font-size: 14px;
+        font-size: 16px;
         margin-bottom: floor(@vspacing/2);
         text-transform: uppercase;
         font-family: @heading-font-stack;
@@ -173,8 +175,6 @@ section.header {
 
 @media (min-width: @wide-1-breakpoint) {
     section.header {
-        background-color: transparent;
-
         .container {
             .justify-content(flex-start);
         }
@@ -188,7 +188,7 @@ section.header {
         }
 
         nav {
-            font-size: 14px;
+            font-size: 16px;
             margin-bottom: 0;
 
             ul {
@@ -427,7 +427,7 @@ section.main {
 
                     min-width: 100px;
                     text-align: right;
-                    margin-right: @vspacing/2;
+                    margin-right: @vspacing/4;
                 }
             }
             .no-bullet {
@@ -533,4 +533,11 @@ img.profile {
 
 .page-heading a {
     color: @black;
+}
+
+.groupby {
+    margin-top: 10px;
+    margin-bottom: 5px;
+    font-style: italic;
+    color: #707070;
 }

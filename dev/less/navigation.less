@@ -2,13 +2,13 @@ div.navigation {
   display: flex;
   flex-direction: column;
 
-    div {
-        width: 50%;
-    }
+  div {
+    width: 100%;
+  }
 
-    div:last-child {
-        text-align: right;
-    }
+  div:last-child {
+    text-align: right;
+  }
 
   a {
     display: flex;
@@ -20,6 +20,7 @@ div.navigation {
       white-space: nowrap;
       overflow: hidden;
       text-overflow: ellipsis;
+      padding: 0 10px;
     }
   }
 }
@@ -28,9 +29,13 @@ div.navigation {
   div.navigation {
     display: flex;
     flex-direction: row;
+
+    div {
+      width: 50%;
+    }
   }
 }
 
 .back-to-posts {
-    text-align: center;
+  text-align: center;
 }

@@ -9,20 +9,25 @@
             {{ end }}
             {{ $totalpostscount := len (where .Data.Pages "Section" "blog") }}
             {{ $latestpostscount := .Site.Params.latestpostscount | default $totalpostscount }}
+
             {{ if gt $latestpostscount 0 }}
-                <div class="page-heading">{{ i18n "latestPosts" }}</div>
-                <ul>
-                    {{ range (first $latestpostscount (where .Data.Pages.ByPublishDate.Reverse "Section" "blog")) }}
-                        {{ partial "li.html" . }}
-                    {{ end }}
-                    {{ if gt $totalpostscount $latestpostscount }}
-                        {{ range where .Site.Menus.main "Identifier" "blog" }}
-                            <li class="post-item no-bullet">
-                                <a id="see-more" {{ printf "href=%q " .URL | safeHTMLAttr }}><span>See more&hellip;</span></a>
-                            </li>
+                <div class="posts">
+                {{ if gt $totalpostscount 0 }}
+                    <div class="page-heading">{{ i18n "latestPosts" }}</div>
+                    <ul>
+                    {{ range (first $latestpostscount (where .Pages "Section" "blog")).GroupByDate "January, 2006" "desc" }}
+                        <li class="groupby">{{ .Key }}</li>
+                        {{ range sort .Pages "Date" "desc" }}
+                            {{ partial "li.html" . }}
                         {{ end }}
                     {{ end }}
-                </ul>
+                    </ul>
+
+                    {{ if gt $totalpostscount $latestpostscount }}
+                        <a href="./blog/" class="see-more">See more ...</a>
+                    {{ end }}
+                {{ end }}
+                </div>
             {{ end }}
         </div>
     </div>
