@@ -89,6 +89,10 @@
             </a>
         {{ end }}
 
+        {{ if .Site.Params.telegram }}
+            <a href="{{ .Site.Params.telegram }}" target="_blank" rel="noopener"><img class="icon" src="/img/telegram.svg" alt="telegram" /></a>
+        {{ end }}
+
         {{ if .Site.Params.instagram }}
             <a href="{{ .Site.Params.instagram }}" target="_blank" rel="noopener">
                 <img class="icon" src="/img/instagram.svg" alt="instagram" />
